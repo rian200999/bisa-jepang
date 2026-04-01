@@ -1,0 +1,213 @@
+/* --- PATH SECTION --- */
+.path {
+    padding: 100px 0 50px!important    ;
+    /* Gradasi: Pink Sakura ke Merah BJ */
+    background: linear-gradient(to bottom, #FFF0F5 0%, #BC002D 100%); 
+    position: relative;
+}
+
+/* --- PATH HEADER CONSISTENCY --- */
+.path-header {
+    text-align: center;
+    margin-bottom: 70px; /* Jarak ke card di bawahnya */
+}
+
+/* Sub-judul / Badge (Samakan dengan .beginner-badge / .sakura-label) */
+.path-label {
+    display: inline-flex;
+    align-items: center;
+    background: #fff; /* Putih bersih biar stand out di BG Pink */
+    color: #BC002D;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(188, 0, 45, 0.05);
+    border: 1px solid rgba(188, 0, 45, 0.1);
+}
+
+/* Judul Utama (Samakan dengan h2 di Stats) */
+.path-header h2 {
+    font-size: 48px; /* Konsisten dengan Stats */
+    line-height: 1.2;
+    font-weight: 800;
+    color: #1A1A2E; /* Dark Indigo */
+    margin-bottom: 20px;
+}
+
+.path-header h2 span {
+    color: #BC002D; /* Merah BJ */
+}
+
+/* Deskripsi (Samakan dengan p di Hero/Stats) */
+.path-header p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* Responsif buat Mobile */
+@media (max-width: 768px) {
+    .path-header h2 {
+        font-size: 36px;
+    }
+    .path-header p {
+        font-size: 16px;
+    }
+}
+
+/* --- LEVEL CARDS --- */
+.level-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.path-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.path-card .level-num {
+    font-size: 48px;
+    font-weight: 900;
+    color: #BC002D;
+    flex-shrink: 0;
+    width: 100px;
+}
+
+.path-card .level-info {
+    flex-grow: 1;
+    padding: 0 30px;
+}
+
+.level-info h3 { font-size: 22px; color: #1A1A2E; margin-bottom: 5px; }
+.level-info p { color: #666; font-size: 15px; }
+
+/* Kanji di Background Card */
+.level-kanji {
+    position: absolute;
+    right: 80px;
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(188, 0, 45, 0.03);
+    pointer-events: none;
+}
+
+.btn-go {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #1A1A2E;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Featured / Active State */
+.path-card.featured {
+    background: #ffffff;
+    transform: scale(1.02);
+    border: 2px solid #BC002D;
+}
+
+.path-card:hover {
+    transform: translateX(15px);
+    background: #ffffff;
+}
+
+.path-card:hover .btn-go {
+    background: #BC002D;
+    transform: rotate(-45deg);
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .path-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .path-card .level-info { padding: 0; }
+    .level-kanji { display: none; }
+    .path-card:hover { transform: translateY(-5px); }
+}
+
+/* Styling Meta Info di dalam Card */
+.card-meta {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #f8f8f8;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.meta-item i {
+    color: #BC002D;
+    font-size: 16px;
+}
+
+/* Sensei Tag Styling */
+.sensei-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.sensei-tag img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sensei-tag span {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1A1A2E;
+}
+
+/* Special treatment for Featured N3 card */
+.path-card.featured .meta-item {
+    background: rgba(188, 0, 45, 0.05);
+}
+
+.path-card.featured .sensei-tag {
+    border-color: rgba(188, 0, 45, 0.1);
+}

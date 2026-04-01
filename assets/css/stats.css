@@ -1,0 +1,125 @@
+/* --- SAKURA STATS SECTION --- */
+.stats-sakura {
+    padding: 120px !important;
+    background: linear-gradient(180deg, #ffffff 0%, #FFF0F5 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.sakura-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.sakura-label {
+    font-weight: 700;
+    color: #FF8DA1;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.sakura-text h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1A1A2E;
+    margin: 20px 0;
+    line-height: 1.2;
+}
+
+.sakura-text h2 span { color: #FF8DA1; }
+
+.sakura-text p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+    max-width: 450px;
+}
+
+/* --- FLOATING PETAL CARDS CLUSTER --- */
+.sakura-visual {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.petal-card {
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 50px rgba(255, 141, 161, 0.12);
+    position: absolute;
+    border: 3px solid #fff;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.petal-card h3 { font-size: 28px; font-weight: 800; color: #1A1A2E; margin: 0; }
+.petal-card span { font-size: 16px; color: #FF8DA1; font-weight: 700; }
+.petal-card p { font-size: 12px; color: #888; margin-top: 4px; font-weight: 600; }
+
+/* Posisi Cluster (Koordinat) */
+.p-center {
+    width: 210px; height: 210px;
+    z-index: 10;
+    box-shadow: 0 25px 60px rgba(255, 141, 161, 0.2);
+}
+
+.p-top-right {
+    width: 150px; height: 150px;
+    top: 20px; right: 40px;
+    z-index: 5;
+}
+
+.p-bottom-right {
+    width: 140px; height: 140px;
+    bottom: 40px; right: 20px;
+    z-index: 5;
+}
+
+.p-top-left {
+    width: 160px; height: 160px;
+    top: 40px; left: 10px;
+    z-index: 5;
+}
+
+.p-bottom-left {
+    width: 130px; height: 130px;
+    bottom: 60px; left: 30px;
+    z-index: 5;
+}
+
+/* Hover Effect */
+.petal-card:hover {
+    transform: scale(1.1) rotate(5deg);
+    z-index: 20;
+    border-color: #FF8DA1;
+}
+
+/* --- ANIMASI SAKURA --- */
+.sakura-petal { position: absolute; z-index: 1; font-size: 24px; opacity: 0.6; animation: fall 12s linear infinite; }
+@keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(1100px) rotate(360deg); opacity: 0; }
+}
+
+.p1 { left: 10%; animation-delay: 0s; }
+.p2 { left: 45%; animation-delay: 4s; }
+.p3 { left: 75%; animation-delay: 7s; }
+.p4 { left: 95%; animation-delay: 2s; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .sakura-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .sakura-text p { margin: 0 auto; }
+    .sakura-visual { height: 450px; transform: scale(0.9); }
+}
