@@ -15,7 +15,7 @@
 
 .sakura-label {
     font-weight: 700;
-    color: #FF8DA1;
+    color: #BC002D;
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 2px;
@@ -29,7 +29,7 @@
     line-height: 1.2;
 }
 
-.sakura-text h2 span { color: #FF8DA1; }
+.sakura-text h2 span { color: #BC002D; }
 
 .sakura-text p {
     font-size: 18px;

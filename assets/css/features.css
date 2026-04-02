@@ -13,15 +13,18 @@
 }
 
 /* --- HEADER KONSISTENSI --- */
+/* --- features HEADER CONSISTENCY --- */
 .features-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 70px; /* Jarak ke card di bawahnya */
 }
 
+/* Sub-judul / Badge (Samakan dengan .beginner-badge / .sakura-label) */
 .features-label {
-    display: inline-block;
-    background:#fff0f3;
-    color: #BC002D; 
+    display: inline-flex;
+    align-items: center;
+    /* background: #fff; */
+    color: #FFFFFF;
     padding: 8px 18px;
     border-radius: 50px;
     font-size: 14px;
@@ -29,26 +32,29 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(188, 0, 45, 0.05);
+    border: 1px solid rgba(188, 0, 45, 0.1);
 }
 
+/* Judul Utama (Samakan dengan h2 di Stats) */
 .features-header h2 {
-    font-size: 48px; /* Ukuran Konsisten h2 */
+    font-size: 48px; /* Konsisten dengan Stats */
     line-height: 1.2;
     font-weight: 800;
-    color: #fcbeca; /* Putih agar kontras di area merah */
+    color: #ffffff; /* Dark Indigo */
     margin-bottom: 20px;
 }
 
 .features-header h2 span {
-    color: #FFFFFF; /* Pink sangat muda untuk highlight */
+    color: #FFFFFF; /* Merah BJ */
 }
 
+/* Deskripsi (Samakan dengan p di Hero/Stats) */
 .features-header p {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.9); 
-    max-width: 620px;
+    color: #ffffff;
+    line-height: 1.8;
+    max-width: 800px;
     margin: 0 auto;
 }
 

@@ -1,0 +1,279 @@
+.interactive {
+    padding: 120px 0;
+    background-color: #F9F9F9;
+    overflow: hidden;
+}
+
+.interactive-row {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.interactive-row.reverse { flex-direction: row-reverse; }
+
+.interactive-content { flex: 1; }
+
+.hub-label {
+    color: #BC002D;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.interactive-content h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1A1A2E;
+    margin-bottom: 20px;
+}
+
+.interactive-content h2 span { color: #BC002D; }
+
+.interactive-content p {
+    font-size: 17px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* --- FLASHCARD 3D --- */
+.interactive-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.flashcard-3d {
+    width: 280px;
+    height: 380px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.flashcard-3d.flipped { transform: rotateY(180deg); }
+
+.fc-front, .fc-back {
+    position: absolute;
+    width: 100%; height: 100%;
+    backface-visibility: hidden;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.fc-front { background: #ffffff; border: 2px solid #eee; }
+.fc-back { background: #BC002D; color: #fff; transform: rotateY(180deg); }
+
+.kanji-big { font-size: 80px; font-weight: 800; color: #1A1A2E; }
+.hint { font-size: 12px; color: #BC002D; margin-top: 20px; font-weight: 600; }
+
+/* --- GAME MOCKUP --- */
+.game-mockup {
+    width: 300px;
+    background: #1A1A2E;
+    border-radius: 25px;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 0 30px 60px rgba(26, 26, 46, 0.2);
+}
+
+.mock-header { text-align: center; font-weight: 700; margin-bottom: 20px; color: #FF8DA1; }
+.q-kanji { font-size: 60px; text-align: center; margin-bottom: 25px; }
+.a-options { display: flex; flex-direction: column; gap: 10px; }
+.opt-btn {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.opt-btn.correct { background: #27ae60; border: 2px solid #2ecc71; }
+
+.hub-divider { border: none; height: 1px; background: #eee; margin-bottom: 80px; }
+
+@media (max-width: 992px) {
+    .interactive-row, .interactive-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
+    .interactive-visual { height: 400px; }
+}
+
+/* --- IMPROVED HUB STATS --- */
+.hub-stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.h-stat {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.h-icon-mini {
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    color: #BC002D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 20px;
+    box-shadow: 0 8px 20px rgba(188, 0, 45, 0.08);
+    border: 1px solid rgba(188, 0, 45, 0.05);
+}
+
+.h-text b {
+    display: block;
+    font-size: 18px;
+    color: #1A1A2E;
+    line-height: 1.2;
+}
+
+.h-text span {
+    font-size: 13px;
+    color: #888;
+    font-weight: 500;
+}
+
+/* --- PREMIUM BUTTON CTA --- */
+.btn-main-premium {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: #BC002D;
+    color: #ffffff !important;
+    padding: 18px 35px;
+    border-radius: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 15px 30px rgba(188, 0, 45, 0.2);
+}
+
+.btn-main-premium i {
+    font-size: 22px;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effects */
+.btn-main-premium:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(188, 0, 45, 0.3);
+    background: #1A1A2E; /* Berubah jadi Indigo pas hover biar kontras */
+}
+
+.btn-main-premium:hover i {
+    transform: translateX(8px);
+}
+
+.btn-main-premium::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-main-premium:hover::before {
+    left: 100%;
+}
+
+/* Biar stat agak goyang dikit pas section aktif */
+.h-stat:hover {
+    transform: scale(1.05);
+}
+
+/* --- IMPROVED GAME OPTIONS (KONSISTEN) --- */
+.game-options {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.g-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.g-icon-mini {
+    width: 45px;
+    height: 45px;
+    background: #1A1A2E; /* Indigo biar beda dikit sama Merah yang atas */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 20px;
+    box-shadow: 0 8px 20px rgba(26, 26, 46, 0.1);
+}
+
+.g-text b {
+    display: block;
+    font-size: 18px;
+    color: #1A1A2E;
+    line-height: 1.2;
+}
+
+.g-text span {
+    font-size: 13px;
+    color: #888;
+    font-weight: 500;
+}
+
+/* --- PREMIUM OUTLINE BUTTON --- */
+.btn-outline-premium {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: transparent;
+    color: #BC002D !important;
+    padding: 16px 32px;
+    border: 2px solid #BC002D;
+    border-radius: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-premium i {
+    font-size: 22px;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effect: Keisi Warnanya */
+.btn-outline-premium:hover {
+    background: #BC002D;
+    color: #ffffff !important;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(188, 0, 45, 0.2);
+}
+
+.btn-outline-premium:hover i {
+    transform: translateX(8px);
+}
+
+.g-item:hover {
+    transform: scale(1.05);
+}

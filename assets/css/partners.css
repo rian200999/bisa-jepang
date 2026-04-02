@@ -1,0 +1,199 @@
+/* --- PARTNERS SECTION (SOLID RED BJ) --- */
+.partners {
+    padding: 120px 0;
+    background: #BC002D;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- HEADER (KONSISTEN) --- */
+.partners-header {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    /* Jarak 60px ke Marquee, sama kayak section lain */
+}
+
+.partners-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.partners-header h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.partners-header h2 span.highlight-pink {
+    color: #ffffff;
+}
+
+.partners-header p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn-partner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #BC002D;
+    padding: 16px 35px;
+    border-radius: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.btn-partner-cta i {
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.btn-partner-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-partner-cta:hover i {
+    transform: translateX(5px);
+}
+
+/* --- FULL WIDTH MARQUEE 2 BARIS --- */
+.marquee-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* Jarak antar baris */
+    position: relative;
+    width: 100%;
+}
+
+/* Efek fade/bayangan hitam di ujung kiri & kanan layar */
+.marquee-container::before,
+.marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, #BC002D 0%, transparent 100%);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, #BC002D 0%, transparent 100%);
+}
+
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: inline-flex;
+    gap: 80px;
+    /* Jarak antar logo */
+    padding-right: 80px;
+}
+
+/* Animasi */
+.track-left {
+    animation: scrollLeft 25s linear infinite;
+}
+
+.track-right {
+    animation: scrollRight 25s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Gaya Logo (Clean Text & Icon) */
+.partner-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 24px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.4);
+    /* Agak transparan elegan */
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.partner-logo i {
+    font-size: 40px;
+}
+
+.partner-logo:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Keyframes */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .partners-header h2 {
+        font-size: 36px;
+    }
+
+    .marquee-track {
+        gap: 50px;
+        padding-right: 50px;
+    }
+
+    .partner-logo {
+        font-size: 18px;
+    }
+
+    .partner-logo i {
+        font-size: 30px;
+    }
+
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 50px;
+    }
+}

@@ -1,0 +1,154 @@
+/* --- EVENT SECTION (SPLIT LAYOUT) --- */
+.events { 
+    padding: 120px 0; 
+    background: #ffffff; 
+}
+
+.events-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Kiri: Teks */
+.events-label { 
+    color: #BC002D; 
+    font-weight: 700; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    display: block; 
+    margin-bottom: 15px; 
+}
+
+.events-text h2 { 
+    font-size: 48px; 
+    font-weight: 800; 
+    color: #1A1A2E; 
+    line-height: 1.2; 
+    margin-bottom: 20px;
+}
+
+.events-text h2 span { color: #BC002D; }
+
+.events-text p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* Kanan: List Event Compact */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    padding: 20px 25px;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.event-item:hover {
+    transform: translateX(-10px); /* Efek ditarik ke kiri dikit */
+    border-color: #BC002D;
+    box-shadow: 0 15px 30px rgba(188, 0, 45, 0.08);
+}
+
+/* Tanggal Kecil Kiri */
+.ev-date-compact {
+    background: #FFF5F7;
+    width: 60px; 
+    height: 60px;
+    border-radius: 15px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    border: 1px solid #FFE4E9;
+    flex-shrink: 0;
+}
+
+.ev-date-compact .date { font-size: 22px; font-weight: 800; color: #1A1A2E; line-height: 1; }
+.ev-date-compact .month { font-size: 11px; font-weight: 800; color: #BC002D; text-transform: uppercase; margin-top: 2px; }
+
+/* Info Tengah */
+.ev-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ev-tag-wrap { margin-bottom: 8px; }
+
+.ev-tag { 
+    font-size: 10px; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    padding: 4px 10px; 
+    border-radius: 5px; 
+}
+.ev-tag.online { background: #e3f2fd; color: #1976d2; }
+.ev-tag.exam { background: #fff3e0; color: #f57c00; }
+.ev-tag.offline { background: #e8f5e9; color: #388e3c; }
+
+.ev-info h4 { 
+    font-size: 18px; 
+    font-weight: 800; 
+    color: #1A1A2E; 
+    margin: 0 0 5px 0; 
+    transition: 0.3s;
+}
+
+.event-item:hover .ev-info h4 { color: #BC002D; }
+
+.ev-time { 
+    font-size: 13px; 
+    color: #888; 
+    font-weight: 600; 
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
+}
+
+/* Panah Aksi Kanan */
+.ev-action {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1A1A2E;
+    font-size: 20px;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.event-item:hover .ev-action {
+    background: #BC002D;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .events-wrapper { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+    .events-text { max-width: 600px; margin: 0 auto; }
+    .event-item { text-align: left; }
+}

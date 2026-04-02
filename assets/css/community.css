@@ -1,0 +1,278 @@
+/* --- COMMUNITY SECTION --- */
+.community {
+    padding: 120px 0;
+    /* Background tetap sesuai pesanan: Pink Sakura ke Merah BJ */
+    background: linear-gradient(to bottom, #FFF0F5 0%, #BC002D 100%);
+    overflow: hidden;
+}
+
+/* --- HEADER KONSISTEN (KEMBALI KE DARK TEXT) --- */
+.community-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.community-label {
+    color: #BC002D;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.community-header h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1A1A2E; /* Gelap, karena BG di atas warnanya Pink Muda */
+    line-height: 1.2;
+}
+
+.community-header h2 span { color: #BC002D; }
+
+/* --- GRID LAYOUT --- */
+.community-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- BENTO GLASS CARD (BIAR KONSISTEN SAMA SECTION ATAS) --- */
+.comm-card-bento {
+    background: rgba(255, 255, 255, 0.85); /* Putih Kaca */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 30px; /* Radius 30px konsisten dengan Bento */
+    border: 1px solid #ffffff;
+    box-shadow: 0 20px 40px rgba(188, 0, 45, 0.08);
+}
+
+.comm-desc {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Member Count Styling */
+.member-count {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.member-count span {
+    font-size: 15px;
+    color: #666;
+}
+
+.member-count b { color: #1A1A2E; font-size: 18px; }
+
+.avatar-stack { display: flex; }
+.avatar-stack img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    margin-left: -15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.avatar-stack img:first-child { margin-left: 0; }
+
+/* Buttons */
+.comm-buttons { display: flex; flex-wrap: wrap; gap: 15px; }
+
+.btn-discord, .btn-telegram {
+    flex: 1;
+    justify-content: center;
+    padding: 16px 25px;
+    border-radius: 15px; /* Radius 15px konsisten dengan button lain */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-discord { background: #5865F2; box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3); }
+.btn-telegram { background: #0088cc; box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3); }
+
+.btn-discord:hover, .btn-telegram:hover { transform: translateY(-3px); }
+.btn-discord:hover { box-shadow: 0 15px 25px rgba(88, 101, 242, 0.4); }
+.btn-telegram:hover { box-shadow: 0 15px 25px rgba(0, 136, 204, 0.4); }
+
+/* --- FLOATING BUBBLES INTERACTION --- */
+.comm-visual {
+    position: relative;
+    height: 400px;
+}
+
+.floating-bubble {
+    position: absolute;
+    background: #ffffff;
+    padding: 15px 25px 15px 15px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(188, 0, 45, 0.15);
+    animation: floatBubble 5s infinite ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.floating-bubble span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A1A2E;
+}
+
+.bubble-ava {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* Positioning Bubbles */
+.b1 { top: 10%; left: 0; }
+.b2 { top: 40%; right: 0; animation-delay: 1s; border: 2px solid #BC002D; } /* Highlight admin chat */
+.b3 { bottom: 15%; left: 10%; animation-delay: 2s; }
+
+@keyframes floatBubble {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .community-grid { grid-template-columns: 1fr; }
+    .comm-card-bento { text-align: center; }
+    .member-count { justify-content: center; }
+    .comm-visual { display: none; }
+}
+
+/* --- BUTTONS UPDATE (GRID 3 KOLOM) --- */
+.comm-buttons { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+}
+
+.btn-discord, .btn-telegram, .btn-whatsapp {
+    justify-content: center;
+    padding: 15px 10px; /* Kurangi padding dikit biar muat 3 */
+    border-radius: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp { background: #25D366; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
+.btn-discord { background: #5865F2; box-shadow: 0 10px 20px rgba(88, 101, 242, 0.2); }
+.btn-telegram { background: #0088cc; box-shadow: 0 10px 20px rgba(0, 136, 204, 0.2); }
+
+.btn-whatsapp:hover, .btn-discord:hover, .btn-telegram:hover { transform: translateY(-3px); }
+.btn-whatsapp:hover { box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4); }
+.btn-discord:hover { box-shadow: 0 15px 25px rgba(88, 101, 242, 0.4); }
+.btn-telegram:hover { box-shadow: 0 15px 25px rgba(0, 136, 204, 0.4); }
+
+/* --- REALISTIC CHAT THREAD VISUAL --- */
+.comm-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.chat-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.chat-msg {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    animation: floatChat 5s infinite ease-in-out;
+}
+
+.chat-msg.right { justify-content: flex-end; }
+
+.chat-ava {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #fff;
+}
+
+/* Chat Bubble Styling Ala WA/Telegram */
+.chat-bubble {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 20px 20px 20px 5px; /* Buntut di kiri bawah */
+    box-shadow: 0 15px 30px rgba(188, 0, 45, 0.08);
+    max-width: 280px;
+}
+
+/* Admin Bubble (Warna Indigo, Buntut kanan) */
+.chat-msg.right .chat-bubble {
+    border-radius: 20px 20px 5px 20px;
+    background: #1A1A2E;
+}
+
+.chat-name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #BC002D;
+    margin-bottom: 5px;
+}
+
+.chat-msg.right .chat-name { color: #FF8DA1; justify-content: flex-end; }
+
+.chat-bubble p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    line-height: 1.5;
+}
+
+.chat-msg.right .chat-bubble p { color: #fff; text-align: right; }
+
+/* Animasi Melayang Barengan */
+.b1 { animation-delay: 0s; }
+.b2 { animation-delay: 1s; }
+.b3 { animation-delay: 2s; }
+
+@keyframes floatChat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Mobile Responsif Update */
+@media (max-width: 992px) {
+    .comm-buttons { grid-template-columns: 1fr; } /* Tombol jadi atas-bawah di HP */
+    .chat-wrapper { max-width: 100%; }
+}

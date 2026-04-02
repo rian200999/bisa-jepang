@@ -1,0 +1,257 @@
+/* --- COMPANION SECTION --- */
+.companion {
+    padding: 100px 0 120px;
+    background-color: #ffffff;
+}
+
+.companion-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.companion-label {
+    color: #BC002D;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.companion-header h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1A1A2E;
+    line-height: 1.2;
+}
+
+.companion-header h2 span { color: #BC002D; }
+
+/* --- BENTO GRID SYSTEM --- */
+.bento-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Pakai minmax agar tinggi kotak fleksibel menyesuaikan isi */
+    grid-auto-rows: minmax(220px, auto); 
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.bento-card {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 30px;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border-color: #BC002D;
+}
+
+/* Penempatan Card (Bento Logic) */
+.streak-card { grid-column: span 1; background: #1A1A2E; color: #fff; border: none; }
+.ai-card { grid-column: span 2; background: #FFF5F7; border-color: #FFE4E9; position: relative; overflow: hidden; }
+.count-card { grid-column: span 1; }
+.target-card { grid-column: span 2; }
+
+/* --- STREAK CARD CONTENT --- */
+.card-icon-fire { font-size: 32px; color: #FF8D00; margin-bottom: 10px; }
+.big-num { font-size: 64px; font-weight: 800; line-height: 1; display: block; }
+.sub-num { font-size: 14px; opacity: 0.8; margin-top: 5px; }
+.card-footer-status { font-size: 13px; font-weight: 600; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+/* --- AI CARD CONTENT --- */
+.card-head { display: flex; align-items: center; gap: 10px; color: #BC002D; font-weight: 800; font-size: 16px; margin-bottom: 20px; }
+.ai-card .card-body p { font-size: 18px; color: #444; font-style: italic; line-height: 1.6; }
+
+/* --- COUNTDOWN CARD --- */
+.card-icon-top { font-size: 24px; color: #BC002D; margin-bottom: 15px; }
+.exam-title { font-size: 22px; color: #1A1A2E; font-weight: 800; }
+.exam-days { font-size: 15px; color: #666; margin-bottom: 15px; }
+.progress-bar-container { width: 100%; height: 8px; background: #f0f0f0; border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; background: #BC002D; }
+
+/* --- TARGET CARD --- */
+.target-title { font-size: 22px; color: #1A1A2E; font-weight: 800; margin-bottom: 20px; }
+.task-list { list-style: none; padding: 0; }
+.task-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-weight: 600; color: #555; }
+.task-list li i { font-size: 20px; }
+.task-list li.task-done { color: #27ae60; text-decoration: line-through; opacity: 0.6; }
+
+/* --- CTA BUTTON --- */
+.bento-cta { text-align: center; }
+.btn-premium-tracker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #BC002D;
+    color: #fff !important;
+    padding: 20px 45px;
+    border-radius: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(188, 0, 45, 0.2);
+    transition: 0.3s;
+}
+
+.btn-premium-tracker:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 45px rgba(188, 0, 45, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    .ai-card, .target-card { grid-column: span 2; }
+}
+
+@media (max-width: 600px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .streak-card, .ai-card, .count-card, .target-card { grid-column: span 1; }
+    .companion-header h2 { font-size: 32px; }
+}
+
+/* --- REVISI TARGET CARD (KONSISTEN) --- */
+.bento-card.target-card {
+    grid-column: span 2;
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    /* UBAH: Jadi horizontal flexbox */
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Penempatan Kiri/Kanan */
+.target-left { flex: 1; }
+.target-right { flex-shrink: 0; width: 140px; display: flex; justify-content: center; }
+
+.target-title { font-size: 22px; color: #1A1A2E; font-weight: 800; margin-bottom: 20px; }
+.task-list { list-style: none; padding: 0; }
+.task-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-weight: 600; color: #555; font-size: 15px; }
+.task-list li i { font-size: 20px; }
+.task-list li.task-done { color: #27ae60; text-decoration: line-through; opacity: 0.6; }
+
+/* --- STYLING RADIAL PROGRESS CHART (KONSISTEN) --- */
+.radial-chart { position: relative; width: 100%; height: auto; }
+.circular-chart { display: block; margin: 0 auto; max-width: 100%; max-height: 100%; }
+
+/* Dasar Abu-abu */
+.circle-bg { fill: none; stroke: #f0f0f0; stroke-width: 3.5; }
+
+/* Isi Progres Merah BJ */
+.circle-fill {
+    fill: none;
+    stroke: #BC002D;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.5s ease;
+}
+
+/* Teks Tengah */
+.percentage-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.percentage-text b { display: block; font-size: 24px; font-weight: 800; color: #1A1A2E; line-height: 1; }
+.percentage-text span { font-size: 12px; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Hover Effect: Tetap Merah BJ biar berkarakter */
+.bento-card.target-card:hover {
+    border-color: #BC002D;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(188, 0, 45, 0.1);
+}
+
+/* Responsif buat Mobile */
+@media (max-width: 992px) {
+    .bento-card.target-card { flex-direction: column; text-align: center; gap: 30px; }
+    .target-left { text-align: left; }
+    .target-right { width: 100px; } /* Diagram mengecil dikit di HP */
+}
+
+/* --- ACTIVITY CARD (NEW) --- */
+.activity-card {
+    grid-column: span 2; /* Biar penuh di sisi kanan */
+    flex-direction: row !important; /* Horizontal layout */
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.activity-left { flex: 1; }
+.activity-title { font-size: 22px; color: #1A1A2E; font-weight: 800; margin-bottom: 10px; }
+.activity-total { font-size: 16px; color: #666; margin-bottom: 15px; }
+.activity-total b { color: #BC002D; font-size: 20px; }
+
+.activity-rank {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFF5F7;
+    color: #BC002D;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* --- MINI BAR CHART --- */
+.activity-right { flex: 1.2; }
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 120px;
+    gap: 8px;
+}
+
+.bar-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.bar {
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 6px;
+    transition: all 0.5s ease;
+    min-height: 5px;
+}
+
+.bar-item span { font-size: 11px; font-weight: 700; color: #aaa; }
+
+/* State Active (Hari Ini) */
+.bar-item.active .bar { background: #BC002D; box-shadow: 0 5px 15px rgba(188, 0, 45, 0.2); }
+.bar-item.active span { color: #BC002D; }
+
+/* Hover Effect Bar */
+.bar-item:hover .bar { background: #1A1A2E; }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .activity-card { flex-direction: column !important; text-align: center; }
+    .bar-chart { height: 100px; width: 100%; }
+}
