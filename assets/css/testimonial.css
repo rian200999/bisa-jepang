@@ -1,0 +1,77 @@
+/* --- TESTIMONIAL SECTION --- */
+/* --- TESTIMONIAL SECTION --- */
+.testimonial { 
+    padding: 100px 0 140px; 
+    color: #fff; 
+    
+    /* WAJIB DI-UNCOMMENT BIAR GRADASI NYALA LAGI! */
+    background: linear-gradient(to bottom, #BC002D 0%, #4A0010 100%); 
+}
+
+.testi-header { text-align: center; margin-bottom: 60px; max-width: 600px; margin: 0 auto 60px; }
+.testi-label { color: rgba(255,255,255,0.9); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
+.testi-header h2 { font-size: 48px; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
+.highlight-pink { color: #ffd1d9; }
+.testi-subtitle { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+
+/* --- ASYMMETRIC WATERFALL GRID --- */
+.testi-waterfall { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    max-width: 900px; /* Dibikin agak mengecil biar padat & elegan */
+    margin: 0 auto; 
+    align-items: start; /* Penting! Biar kartunya gak melar ngikutin tinggi tetangganya */
+}
+
+/* THE MAGIC: Kartu genap (kanan) diturunin 50px ke bawah */
+.testi-waterfall .testi-card:nth-child(even) {
+    margin-top: 60px;
+}
+
+.testi-card { 
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 30px; 
+    padding: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    transition: 0.3s; 
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek pas di hover, yang kanan tetep offset */
+.testi-waterfall .testi-card:nth-child(odd):hover { transform: translateY(-8px); border-color: rgba(255, 255, 255, 0.3); }
+.testi-waterfall .testi-card:nth-child(even):hover { transform: translateY(-8px); border-color: rgba(255, 255, 255, 0.3); }
+
+/* Icon Raksasa Transparan di Background Kartu */
+.quote-bg {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 120px;
+    color: rgba(255, 255, 255, 0.03);
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(10deg);
+}
+
+.rating, .testi-card p, .testi-user { position: relative; z-index: 2; }
+
+.rating { color: #FFD700; font-size: 20px; margin-bottom: 20px; }
+.testi-card p { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.8; font-style: italic; margin-bottom: 30px; }
+
+.testi-user { display: flex; align-items: center; gap: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: auto; }
+.testi-user img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #fff; }
+.user-info h4 { font-size: 16px; font-weight: 800; margin: 0 0 3px 0; color: #fff; }
+.user-info span { font-size: 12px; color: #FF8DA1; font-weight: 600; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) { 
+    .testi-waterfall { grid-template-columns: 1fr; }
+    /* Reset trik offset di HP biar jadi 1 kolom normal ke bawah */
+    .testi-waterfall .testi-card:nth-child(even) { margin-top: 0; }
+}
+

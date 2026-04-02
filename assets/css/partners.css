@@ -1,10 +1,13 @@
-/* --- PARTNERS SECTION (SOLID RED BJ) --- */
+/* --- PARTNERS SECTION (DARK TO RED TRANSITION) --- */
 .partners {
     padding: 120px 0;
-    background: #BC002D;
+    /* GRADASI: Dari Gelap Banget (#1A0005) naik ke Merah BJ (#BC002D) */
+    background: linear-gradient(to bottom, #1A0005 0%, #BC002D 100%);
     overflow: hidden;
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* BASMI GARIS: Hapus border dan tarik ke atas buat nutup celah antar section */
+    border: none;
+    margin-top: -2px; 
 }
 
 /* --- HEADER (KONSISTEN) --- */
@@ -12,7 +15,6 @@
     text-align: center;
     max-width: 1200px;
     margin: 0 auto 60px;
-    /* Jarak 60px ke Marquee, sama kayak section lain */
 }
 
 .partners-label {
@@ -33,6 +35,7 @@
     margin-bottom: 20px;
 }
 
+/* Span highlight dibikin putih biar gak nabrak sama gradasi merah di bawahnya */
 .partners-header h2 span.highlight-pink {
     color: #ffffff;
 }
@@ -44,51 +47,22 @@
     margin-bottom: 30px;
 }
 
-.btn-partner-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #ffffff;
-    color: #BC002D;
-    padding: 16px 35px;
-    border-radius: 15px;
-    font-weight: 800;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 15px;
-}
-
-.btn-partner-cta i {
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.btn-partner-cta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.btn-partner-cta:hover i {
-    transform: translateX(5px);
-}
-
 /* --- FULL WIDTH MARQUEE 2 BARIS --- */
 .marquee-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    /* Jarak antar baris */
+    gap: 30px; /* Jarak antar baris marquee */
     position: relative;
     width: 100%;
 }
 
-/* Efek fade/bayangan hitam di ujung kiri & kanan layar */
+/* EFEK FADE: Biar logo seolah muncul dari kegelapan di kiri & kanan */
 .marquee-container::before,
 .marquee-container::after {
     content: "";
     position: absolute;
     top: 0;
-    width: 150px;
+    width: 200px;
     height: 100%;
     z-index: 2;
     pointer-events: none;
@@ -96,12 +70,13 @@
 
 .marquee-container::before {
     left: 0;
-    background: linear-gradient(to right, #BC002D 0%, transparent 100%);
+    /* Pakai warna transisi gelap biar gak ada garis vertikal di pinggir */
+    background: linear-gradient(to right, #2b0811 0%, transparent 100%);
 }
 
 .marquee-container::after {
     right: 0;
-    background: linear-gradient(to left, #BC002D 0%, transparent 100%);
+    background: linear-gradient(to left, #2b0811 0%, transparent 100%);
 }
 
 .marquee-wrapper {
@@ -112,12 +87,11 @@
 
 .marquee-track {
     display: inline-flex;
-    gap: 80px;
-    /* Jarak antar logo */
+    gap: 80px; /* Jarak antar logo di dalam track */
     padding-right: 80px;
 }
 
-/* Animasi */
+/* ANIMASI LOGO BERJALAN */
 .track-left {
     animation: scrollLeft 25s linear infinite;
 }
@@ -130,7 +104,7 @@
     animation-play-state: paused;
 }
 
-/* Gaya Logo (Clean Text & Icon) */
+/* GAYA LOGO (CLEAN & MINIMALIST) */
 .partner-logo {
     display: flex;
     align-items: center;
@@ -138,7 +112,6 @@
     font-size: 24px;
     font-weight: 800;
     color: rgba(255, 255, 255, 0.4);
-    /* Agak transparan elegan */
     transition: 0.3s;
     cursor: pointer;
 }
@@ -152,36 +125,26 @@
     transform: scale(1.05);
 }
 
-/* Keyframes */
+/* --- KEYFRAMES LOGO BERGERAK --- */
 @keyframes scrollLeft {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 @keyframes scrollRight {
-    0% {
-        transform: translateX(-50%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
 }
 
-/* Responsive */
+/* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
     .partners-header h2 {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .marquee-track {
-        gap: 50px;
-        padding-right: 50px;
+        gap: 40px;
+        padding-right: 40px;
     }
 
     .partner-logo {
@@ -192,8 +155,9 @@
         font-size: 30px;
     }
 
+    /* Kecilin bayangan fade di HP biar gak nutupin logo tengah */
     .marquee-container::before,
     .marquee-container::after {
-        width: 50px;
+        width: 80px;
     }
 }
